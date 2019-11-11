@@ -45,7 +45,7 @@ for (i=0; i<list.length; i++) {
 		imageTitle = getTitle();
 		run("Calculator Plus", "i1="+imageTitle+" i2="+BackgroundImageTitle+" operation=[Divide: i2 = (i1/i2) x k1 + k2] k1="+bgMeanValue+" k2=0 create");
 		selectWindow("Result");
-		saveAs(".tif", output_folder+"\\"+imageTitle); // change if imageTitle shall not be changed
+		saveAs(".tif", output_folder+"\\"+imageTitle); // change if imageTitle of corrected images shall be changed
 		run("Close");
 		selectWindow(BackgroundImageTitle);
 		close("\\Others"); // close all images except for background image
