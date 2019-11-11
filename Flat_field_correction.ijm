@@ -37,17 +37,16 @@ setBatchMode(true);
 list = getFileList(input_folder);
 
 for (i=0; i<list.length; i++) {
-     if (endsWith(list[i], suffix_in)){
-     	print("file " + i + ": " + input_folder+"\\"+list[i]);
-        open(input_folder+"\\"+list[i]); 
+	if (endsWith(list[i], suffix_in)){
+		print("file " + i + ": " + input_folder+"\\"+list[i]);
+		open(input_folder+"\\"+list[i]); 
 
 		//get Title
 		imageTitle = getTitle();
-    	run("Calculator Plus", "i1="+imageTitle+" i2="+BackgroundImageTitle+" operation=[Divide: i2 = (i1/i2) x k1 + k2] k1="+bgMeanValue+" k2=0 create");
-    	selectWindow("Result");
-    	saveAs(".tif", output_folder+"\\"+imageTitle); // change if imageTitle shall not be changed
-    	run("Close");
-
+		run("Calculator Plus", "i1="+imageTitle+" i2="+BackgroundImageTitle+" operation=[Divide: i2 = (i1/i2) x k1 + k2] k1="+bgMeanValue+" k2=0 create");
+		selectWindow("Result");
+		saveAs(".tif", output_folder+"\\"+imageTitle); // change if imageTitle shall not be changed
+		run("Close");
 		selectWindow(BackgroundImageTitle);
 		close("\\Others"); // close all images except for background image
 	}
